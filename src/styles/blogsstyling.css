@@ -1,0 +1,23 @@
+html,body {
+    margin:0;
+    padding:0;
+}
+.blogs_box {
+    display:flex;
+    flex-direction: column;
+    /* max-width:calc(100vw - 50vw); */
+    border:none;
+    align-items:center;
+}
+
+h1, p {
+    margin:0;
+    padding:0;
+}
+.individual_blog {
+    /* border:1px solid black; */
+    margin-bottom:3rem;
+    background-color: red;
+    /* padding:1rem; */
+    width:calc(100vw - 20vw);
+}

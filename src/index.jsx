@@ -3,11 +3,40 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { createBrowserRouter } from 'react-router-dom';
+import { RouterProvider } from 'react-router';
+import AboutUs from './components/AboutUs';
+import WriteABlog from './components/WriteABlog';
+import ContactUs from './components/ContactUs';
+import HomePage from './components/HomePage';
+import MyBlogs from './components/MyBlogs';
+import Blog from './components/Blog';
+import Login from './components/Login';
+import CreateAccount from './components/CreateAccount';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const routes = createBrowserRouter(
+  [
+    {
+      path : '/',
+      element : <App/>,
+      children:[
+        {path:'/',element:<HomePage></HomePage>},
+        {path:"/aboutus",element:<AboutUs></AboutUs>},
+        {path:"/writeablog",element:<WriteABlog></WriteABlog>},
+        {path:"/contactus",element:<ContactUs></ContactUs>},
+        {path:"/myblogs",element:<MyBlogs></MyBlogs>},
+        {path:"/myblogs/:title",element:<Blog></Blog>},
+        {path:"/login",element:<Login></Login>},
+        {path:"/register",element:<CreateAccount></CreateAccount>}
+      ]
+      
+    }
+  ]
+)
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={routes}></RouterProvider>
   </React.StrictMode>
 );
 

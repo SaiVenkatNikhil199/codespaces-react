@@ -1,0 +1,50 @@
+body,html {
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.blogpost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    margin-top: 5rem;
+}
+
+.blogpost input,textarea {
+    margin-bottom: 1rem;
+    max-width: calc(100vw - 30vw);
+    /* margin-left: 5rem; */
+    
+    padding: 1rem;
+    font-size: 1.5rem;
+    outline: none;
+    /* border: none;
+    border-bottom: 1px solid black; */
+}
+
+button {
+    max-width: calc(100vw - 90vw);
+    background-color: transparent;
+    outline: none;
+    
+    padding-left:1rem;
+    padding-right: 1rem;
+    border-radius: 3px;
+    border:0.5px solid black;
+
+    transition: 0.2s;
+
+
+}
+
+button:hover {
+    background-color: #424242;
+    color:#FEFFEA;
+    cursor:pointer;
+}
