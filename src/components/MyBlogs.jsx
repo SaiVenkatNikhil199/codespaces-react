@@ -22,6 +22,7 @@ function MyBlogs(){
             <h1>My Blogs</h1>
             <div className="blogs_box">
                 {
+                    blogs.length === 0 ? <p>No blogs found</p> :
                     blogs.map((blog) => {
                         return (<div className="individual_blog">
                             <h1>

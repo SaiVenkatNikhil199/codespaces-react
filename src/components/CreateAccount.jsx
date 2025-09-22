@@ -1,12 +1,12 @@
 import axios from "axios"
 import {useState} from 'react'
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 function CreateAccount() {
 
     let [accountCreated,setAccountCreated] = useState(false)
     let [username,setUsername] = useState("")
     let [password,setPassword] = useState("")
-
+    let navigate = useNavigate()
     let handleSubmit = (e) => {
         e.preventDefault()
         axios.post("https://cuddly-spoon-jj5jvxgjw5rvc5q79-8000.app.github.dev/add_user",{
@@ -17,7 +17,10 @@ function CreateAccount() {
             console.log("account created successfully")
             // response.data
             console.log(response.data)
+            console.log(username,password)
             setAccountCreated(true)
+
+            navigate("/login")
         }).catch(error => {
             // console.log(error.response.data)
             console.log("Enter correct details")
@@ -43,9 +46,9 @@ function CreateAccount() {
                 <br></br>
                 <button type="submit">Create Account</button>
             </form>
-            {accountCreated ? <Link to="/login">
+            {/* {accountCreated ? <Link to="/login">
                 <button>Login Page</button>
-            </Link> : null}
+            </Link> : null} */}
         </>
     ) 
 }

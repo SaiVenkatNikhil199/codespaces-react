@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { Link, useOutletContext } from 'react-router-dom'
 function Login(){
     
-    let {isUserLoggedIn, setIsUserLoggedIn} = useOutletContext()
+    let { isUserLoggedIn, setIsUserLoggedIn } = useOutletContext()
     let navigate = useNavigate()
     let [username,setUsername] = useState('')
     let [password,setPassword] = useState('')
@@ -39,7 +39,7 @@ function Login(){
                 <br></br>
                 <button type='submit'>Login</button>
 
-                {!isUserLoggedIn || <button>
+                {!isUserLoggedIn && <button>
                         <Link to="/register">
                             create account
                         </Link>
