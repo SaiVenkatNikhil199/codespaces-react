@@ -2,20 +2,24 @@ import '../styles/blogcontent.css'
 import { useState } from 'react'
 import {addBlog} from '../blogsstorage.js'
 import axios from 'axios'
-
+import RichTextEditor from './RichTextEditor'
 function WriteABlog(){
     let [title,setTitle] = useState('')
     let [content,setContent] = useState('')
-    
+    if(content != '') {
+        document.getElementById('titleDiv').style.transform = 'translateY(30px)'
+    }
     return(
         <>
             <div className="blogpost">
-                <input onChange={(e) => {
-                    setTitle(e.target.value)
-                }} type="text" placeholder="Type your title"></input>
-                <textarea onChange={(e) => {
-                    setContent(e.target.value)
-                }} cols="100" rows="30" placeholder="type your content"></textarea>
+                <div id='titleDiv'>
+                    <input onChange={(e) => {
+                        setTitle(e.target.value)
+                    }} type="text"></input>
+                </div>
+
+                <RichTextEditor state={{content,setContent}} />
+
                 <button onClick={
                     // () => addBlog(title,content)
                     async () => {
@@ -36,6 +40,7 @@ function WriteABlog(){
 
                 }>Create</button>
             </div>
+
         </>
     )
 }

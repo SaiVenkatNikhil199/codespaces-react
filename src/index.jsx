@@ -23,7 +23,7 @@ const routes = createBrowserRouter(
       element : <App/>,
       children:[
         {path:'/',element:<HomePage></HomePage>},
-
+        
         {path:"/aboutus",element:<AboutUs></AboutUs>},
         {path:"/contactus",element:<ContactUs></ContactUs>},
         {element:<ProtectedRoute></ProtectedRoute>,

@@ -91,7 +91,7 @@ async def add_user_route(user_param : User):
     try:
         user = await add_user(user_param.dict())
         if(user is None):
-            return HTTPException(status_code=500,detail="Failed to adda user")
+            return HTTPException(status_code=500,detail="Failed to add a user")
         return user
     except Exception as e:
         raise HTTPException(

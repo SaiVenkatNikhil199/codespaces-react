@@ -14,7 +14,35 @@ body,html {
     align-items: center;
     height: 50vh;
     margin-top: 5rem;
+    gap: 3rem;
 }
+
+.blogpost input {
+    border: none;
+    border-bottom: 2px solid black;
+    width: calc(100vw - 10vw);
+}
+
+
+ .blogpost div {
+    position: relative;
+} 
+
+
+#titleDiv::before {
+    content: 'type your title';
+    position: absolute;
+    top: calc(20vh - 150px);
+    height: 20px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* width: calc(100vw - 75vw);
+    font-size: 2rem; */
+    transition: 0.2s;
+    width: 140px;
+} 
+
 
 .blogpost input,textarea {
     margin-bottom: 1rem;
@@ -40,6 +68,7 @@ button {
 
     transition: 0.2s;
 
+    
 
 }
 
